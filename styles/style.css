@@ -7,7 +7,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 150px;
+  padding: 15px 80px;
   transition: 0.5s ease;
 }
 
@@ -51,16 +51,21 @@ header .navigation .navigation-items a:hover:before {
   width: 100%;
   background: var(--bg-color);
 }
-
-.home {
-  padding: 100px;
-  position: relative;
+/* .main-home {
   width: 100%;
   min-height: 100svh;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: -1;
+} */
+.home {
+  padding: 100px 80px;
+  width: 95%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background: rgba(0, 140, 255, 0.959);
+  height: 100svh;
 }
 
 .home:before {
@@ -164,7 +169,7 @@ header .navigation .navigation-items a:hover:before {
 .slider-navigation {
   z-index: 888;
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 50%;
   display: flex;
   align-items: center;
@@ -180,6 +185,7 @@ header .navigation .navigation-items a:hover:before {
   cursor: pointer;
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
   transition: 0.3s ease;
+  /* padding: 100px; */
 }
 
 .slider-navigation .nav-btn.active {
@@ -213,7 +219,7 @@ header .navigation .navigation-items a:hover:before {
 
 .about .about--con {
   display: flex;
-  gap: 50px;
+  gap: 0px;
   justify-content: center;
   padding: 100px 0;
 }
@@ -284,7 +290,7 @@ header .navigation .navigation-items a:hover:before {
   width: 500px;
   font-size: 3.5em;
   color: var(--sc-color);
-  border-bottom: 2px solid var(--sc-color);
+  border-bottom: 2px solid var(--bg-color);
   position: absolute;
   top: 70px;
   text-align: end;
@@ -320,35 +326,154 @@ header .navigation .navigation-items a:hover:before {
   object-fit: cover;
 }
 
+/* welcome */
+.welcome {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  /* padding: 180px 100px; */
+  background-color: white;
+}
+.welcome .text-con {
+  display: flex;
+  font-size: 1.2em;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  max-width: 600px;
+  min-width: 400px;
+}
+.welcome .text-con h1 {
+  font-weight: bolder;
+  font-family: Oswald, serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.welcome .text-con p{
+  line-height: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.read-more {
+  background-color: black;
+  border: 2px solid black;
+  font-family: Oswald, serif;
+  color: white;
+  padding: 10px 47px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.read-more:hover{
+  background-color: white;
+  color: black;
+}
+.welcome .img-con {
+  background-color: blue;
+  flex: 1;
+  height: 350px;
+  max-width: 600px;
+  min-width: 400px;
+}
+.welcome .img-con img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
-/* @media (min-width: 1281px) {
-  .more-about-us .con .img-con {
-    max-width: 800px;
-    min-width: 400px;
-    flex: 1;
+/* parallax background */
+.section1 {
+  padding: 0;
+  width: 100%;
+  min-height: 70vh;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.section1::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  background: url('/images/e.jpg') top center;
+  background-size: cover;
+  transform: translateZ(-1px) scale(2.2);
+  filter: blur(2px);
+}
+.section1 {
+  z-index: -1;
+}
+
+.text {
+  top: 30%;
+  left: 50%;
+  position: absolute;
+  font-size: 15vw;
+  color: white;
+  transform: scale(1, 1.1) translate(-50%, 10%);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+  5px 5px 70px rgba(255, 255, 255, 0.5);
+}
+/* menu */
+.menu {
+  background: white;
+}
+.menu .img-con {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.menu img {
+  width: 100%;
+  height: 260px;
+  max-width: 600px;
+  object-fit: cover;
+}
+
+.menu .text-con {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.menu .text-con h1 {
+  font-weight: bolder;
+  font-family: Oswald, serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (min-width: 1281px) {
+  .welcome .text-con,
+  .welcome .img-con {
+    max-width: 1000px;
   }
-} */
+}
 
 @media (max-width: 1080px) {
   header {
     padding: 12px 20px;
   }
-
+  
   .home,
   .about,
+  .welcome,
+  .menu,
   section {
     padding: 100px 20px;
   }
-
+  
   .home .media-icons {
     right: 15px;
   }
-
+  
   header .navigation {
     display: none;
   }
-
+  
   header .navigation.active {
     position: fixed;
     width: 100%;
@@ -360,18 +485,18 @@ header .navigation .navigation-items a:hover:before {
     align-items: center;
     background: rgba(1, 1, 1, 0.5);
   }
-
+  
   header .navigation .navigation-items a {
     color: #222;
     font-size: 1.2em;
     height: 5px;
   }
-
+  
   header .navigation .navigation-items a:before {
     background: #222;
     height: 5px;
   }
-
+  
   header .navigation .navigation-items {
     background: white;
     width: 600px;
@@ -384,9 +509,13 @@ header .navigation .navigation-items a:hover:before {
     border-radius: 5px;
     box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
   }
-
+  
   .menu-btn {
     background: url;
+  }
+
+  .menu img {
+    height: 230px;
   }
 }
 
@@ -402,6 +531,13 @@ header .navigation .navigation-items a:hover:before {
 
   .about .about--text h1 {
     margin-bottom: 20px;
+  }
+
+  .menu .img-con {
+    flex-wrap: wrap;
+  }
+  .menu img {
+    max-width: 300px;
   }
 }
 @media (max-width: 740px) {
@@ -433,5 +569,15 @@ header .navigation .navigation-items a:hover:before {
 
   .about {
     padding: 100px 50px;
+  }
+
+  .welcome .img-con,
+  .welcome .text-con {
+    min-width: 300px;
+    max-width: auto;
+  }
+
+  .menu img {
+    height: 200px;
   }
 }
