@@ -28,8 +28,7 @@ let index = 0;
       clearInterval(setIntervalId);
       index = i;
       sliderNav(index);
-      console.log(index);
-      interval();
+      // interval();
     });
   });
 
@@ -45,4 +44,4 @@ let index = 0;
 }
 
 // interval();
-window.onload = interval;
+// window.onload = interval;
