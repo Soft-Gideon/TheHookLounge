@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  overflow: hidden;
+  padding: 150px 100px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --bg-color: #09a6d4;
+  --sc-color: #90a6d4;
+}
