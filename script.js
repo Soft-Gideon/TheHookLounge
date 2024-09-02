@@ -48,7 +48,7 @@ const infiniteScroll = () => {
     carousel.classList.add('no-transition');
     carousel.scrollLeft = carousel.scrollWidth - ( 2 * carousel.offsetWidth );
     carousel.classList.remove('no-transition');
-  } else if (Math.round(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+  } else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
     carousel.classList.add('no-transition');
     carousel.scrollLeft = carousel.offsetWidth;
     carousel.classList.remove('no-transition');
