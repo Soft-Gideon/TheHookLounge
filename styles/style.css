@@ -491,7 +491,7 @@ header .navigation .navigation-items a:hover:before {
   height: 100%;
   top: 0;
   position: absolute;
-  background: url('/images/10.jpg') top center;
+  background: url('images/10.jpg') top center;
   background-size: cover;
   transform: translateZ(-1px) scale(2.2);
   filter: brightness(40%);
