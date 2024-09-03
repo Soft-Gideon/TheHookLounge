@@ -1,14 +1,15 @@
-html {
-  overflow: hidden;
-  height: 100vh;
+body {
+  /* height: 100svh;  */
+  overflow-x: hidden;
 }
 
-body {
+main {
   perspective: 1px;
   height: 100svh;
   transform-style: preserve-3d;
   overflow-x: hidden;
   overflow-y: scroll;
+  
 }
 
 * {

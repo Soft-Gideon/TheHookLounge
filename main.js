@@ -45,3 +45,26 @@ let index = 0;
 
 // interval();
 window.onload = interval;
+
+
+// scroll Button Effect
+const main = document.querySelector("main");
+const scrollTop = document.querySelector(".scroll-top");
+const header = document.querySelector("header");
+ scrollTop.addEventListener("click", () => {
+  main.scrollTo({ top: 0, behavior: "smooth" });
+});
+const scrolling = () => {
+  if (Math.round(main.scrollTop) >= 200) {
+    scrollTop.classList.add("active");
+  } else {
+    scrollTop.classList.remove("active");
+  }
+
+  if (Math.round(main.scrollTop) >= 100) {
+    header.classList.add("active");
+  } else {
+    header.classList.remove("active");
+  }
+}
+main.addEventListener("scroll", scrolling);
