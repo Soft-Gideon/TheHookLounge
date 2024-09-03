@@ -836,7 +836,7 @@ header .navigation .navigation-items a:hover:before {
 }
 .contact-con .open-con {
   width: 400px;
-  background: url("/images/dark-background.jpg");
+  background: url("images/dark-background.jpg");
   background-size: cover;
   padding: 20px 30px;
   height: 500px
