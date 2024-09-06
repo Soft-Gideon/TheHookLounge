@@ -33,14 +33,27 @@ header .navigation {
   position: relative;
 }
 
+header .navigation-items {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+
 header .navigation .navigation-items a {
   position: relative;
   color: white;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: bold;
   text-decoration: none;
-  margin-left: 30px;
   transition: 0.3s ease;
+  text-transform: uppercase;
+}
+
+header .navigation-items .close{
+  color: black;
+  font-size: 1.5em;
+  display: none;
+  cursor: pointer;
 }
 
 header .navigation .navigation-items a:before {
@@ -58,6 +71,18 @@ header .navigation .navigation-items a:hover:before {
   width: 100%;
   background: rgb(200, 147, 95);
 }
+.menu-btn {
+  display: flex;
+  align-items: center;
+}
+header .menu {
+  display: none;
+  cursor: pointer;
+}
+header .menu i {
+  color: white;
+  font-size: 1.2em;
+}
 .home {
   position: relative;
   padding: 100px 80px;
@@ -74,7 +99,7 @@ header .navigation .navigation-items a:hover:before {
   content: "";
   z-index: 777;
   position: absolute;
-  background: rgba(251, 3, 3 0.034);
+  background: rgba(251, 3, 3, 0.034);
   width: 100%;
   height: 100%;
   top: 0;
@@ -1063,8 +1088,24 @@ footer .policy .developer-link {
   .home .media-icons {
     right: 15px;
   }
-  
+
+  .offer img {
+    height: 230px;
+  }
+  .gallery .text-con {
+    padding: 0;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 840px) {
   header .navigation {
+    display: none;
+  }
+  header .menu {
+    display: block;
+  }
+  header .menu.active .open {
     display: none;
   }
   
@@ -1080,17 +1121,6 @@ footer .policy .developer-link {
     background: rgba(1, 1, 1, 0.5);
   }
   
-  header .navigation .navigation-items a {
-    color: #222;
-    font-size: 1.2em;
-    height: 5px;
-  }
-  
-  header .navigation .navigation-items a:before {
-    background: #222;
-    height: 5px;
-  }
-  
   header .navigation .navigation-items {
     background: white;
     width: 600px;
@@ -1098,26 +1128,39 @@ footer .policy .developer-link {
     margin: 20px;
     padding: 40px;
     display: flex;
+    height: 300px;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    position: relative;
+  }
+
+  header .navigation-items .close {
+    color: black;
+    font-size: 1.5em;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+  }
+
+  header .navigation .navigation-items a {
+    color: #222;
+    font-size: 1.2em;
+    /* height: 5px; */
+  }
+  
+  header .navigation .navigation-items a:before {
+    background: #222;
+    height: 5px;
   }
   
   .menu-btn {
     background: url;
   }
 
-  .offer img {
-    height: 230px;
-  }
-  .gallery .text-con {
-    padding: 0;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 840px) {
   .about .about--con {
     display: flex;
     gap: 30px;
